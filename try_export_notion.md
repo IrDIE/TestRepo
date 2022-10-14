@@ -12,7 +12,7 @@
     
     
 <details>
-  <summary>**Цели и гипотезы**</summary>
+  <summary>Цели и гипотезы</summary>
  
     
     Гипотезы:
