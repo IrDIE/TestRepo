@@ -10,7 +10,7 @@ import torch.nn as nn
 
 from dataLoad import SimRealDataset
 from discriminator_model import Discriminator
-from display_plots import prot_imgs_trian
+from display_plots import prot_imgs_trian, display_losses
 from generator_model import Generator
 from save_load import load_GAN, save_GAN
 import configparser as cfg
@@ -118,11 +118,11 @@ def trainCycleGAN(n_epochs, model_version, model_SR, model_RS, opt_SR, opt_RS, l
 
             loss_D_current = (loss_sim_d + loss_real_d) / 2
             #opt_discriminators.zero_grad()
-            optimize_disc(opt_RS['discriminator'], opt_SR['discriminator'], type = 'zero_grad')
+            optimize_disc(opt_RS['discriminator'], opt_SR['discriminator'], type = 'zero_grad', epoch=epoch)
 
             loss_D_current.backward(retain_graph=True)
             #opt_discriminators.step()
-            optimize_disc(opt_RS['discriminator'], opt_SR['discriminator'], type = 'step')
+            optimize_disc(opt_RS['discriminator'], opt_SR['discriminator'], type = 'step', epoch=epoch)
 
             #loss_D.append(loss_D_current.item())
 
@@ -149,10 +149,10 @@ def trainCycleGAN(n_epochs, model_version, model_SR, model_RS, opt_SR, opt_RS, l
             loss_G_Real_ = adversarial_loss_real+lambda_cycle*cycle_real + lambda_identity*identity_real
 
             loss_G_current = adversarial_loss + cycle_loss + identity_loss
-            optimize_disc(opt_RS['generator'], opt_SR['generator'], type = 'zero_grad')
+            optimize_disc(opt_RS['generator'], opt_SR['generator'], type = 'zero_grad', epoch=epoch)
             loss_G_current.backward(retain_graph=True)
 
-            optimize_disc(opt_RS['generator'], opt_SR['generator'], type = 'step')
+            optimize_disc(opt_RS['generator'], opt_SR['generator'], type = 'step', epoch=epoch)
 
             loss_G_Sim.append(loss_G_Sim_.item())
             loss_G_Real.append(loss_G_Real_.item())
@@ -177,7 +177,7 @@ def trainCycleGAN(n_epochs, model_version, model_SR, model_RS, opt_SR, opt_RS, l
                      MODEL_NAME = "SR_" + model_version)
             save_GAN(epoch, model_RS, optimizer = opt_RS,LOSS = [loss_D_Sim_per_epochs, loss_G_Sim_per_epochs ],  \
                      MODEL_NAME = "RS_" + model_version)
-
+            display_losses(loss_D_Sim_per_epochs, loss_D_Real_per_epochs, loss_G_Sim_per_epochs, loss_G_Real_per_epochs)
 
     return loss_D_Sim_per_epochs, loss_D_Real_per_epochs , loss_G_Sim_per_epochs, loss_G_Real_per_epochs
 

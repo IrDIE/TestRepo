@@ -5,6 +5,14 @@ def plotf(image):
   return image[0].permute(1, 2, 0).cpu().detach().numpy()
 
 
+def display_losses(loss_D_Sim_per_epochs, loss_D_Real_per_epochs, loss_G_Sim_per_epochs, loss_G_Real_per_epochs):
+      fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(16, 8))
+      axes[0].plot(loss_D_Sim_per_epochs, label="loss Discr (Sim)")
+      axes[0].plot(loss_D_Real_per_epochs, label="loss Discr (Real)")
+      axes[1].plot(loss_G_Sim_per_epochs, label="loss Generator (Sim)")
+      axes[1].plot(loss_G_Real_per_epochs, label="loss Generator (Real)")
+      plt.show()
+
 
 def prot_imgs_trian(sim_img_tensor, fake_real, cycle_sim, real_img_tensor, fake_sim, cycle_real):
       fig = plt.figure(figsize=(20, 10))
