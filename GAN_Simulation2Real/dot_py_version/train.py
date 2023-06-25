@@ -34,9 +34,14 @@ root_path = path_img
 
 
 
-
 # вспомогательная функция
-def optimize_disc(opt1, opt2, type):
+
+
+def lr_linear_dacay(base_lr, iter, max_iter):
+    return base_lr * ((1 - float(iter) / max_iter) )
+
+
+def optimize_disc(opt1, opt2, type, epoch):
     if type == 'zero_grad':
         opt1.zero_grad()
         opt2.zero_grad()
@@ -44,6 +49,13 @@ def optimize_disc(opt1, opt2, type):
     if type == 'step':
         opt1.step()
         opt2.step()
+    if epoch > 20:
+        reduced_lr = lr_linear_dacay(base_lr=lr, iter=epoch, max_iter=n_epochs)
+        for g in opt1.param_groups:
+            g['lr'] = reduced_lr
+
+        for g in opt2.param_groups:
+            g['lr'] = reduced_lr
 
 
 def trainCycleGAN(n_epochs, model_version, model_SR, model_RS, opt_SR, opt_RS, lambda_cycle = lambda_cycle, lambda_identity = lambda_identity,
