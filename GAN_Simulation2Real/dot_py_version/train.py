@@ -22,6 +22,18 @@ device= 'cuda' if torch.cuda.is_available() else 'cpu'
 conf =cfg.ConfigParser()
 conf.read("conf.ini")
 path_img = conf['path']['root_img']
+model_version=conf['hyperparameters']['model_version']
+n_epochs=int(conf['hyperparameters']['n_epochs'])
+lr = float(conf['hyperparameters']['lr'])
+b1, b2 = float(conf['hyperparameters']['beta1']), float(conf['hyperparameters']['beta2'])
+betas=(b1, b2)
+lambda_cycle=float(conf['hyperparameters']['lambda_cycle'])
+lambda_identity =float(conf['hyperparameters']['lambda_identity'])
+
+root_path = path_img
+
+
+
 
 # вспомогательная функция
 def optimize_disc(opt1, opt2, type):
@@ -34,9 +46,9 @@ def optimize_disc(opt1, opt2, type):
         opt2.step()
 
 
-def trainCycleGAN(n_epochs, model_version, model_SR, model_RS, opt_SR, opt_RS, lambda_cycle = 10, lambda_identity = 0.2,
+def trainCycleGAN(n_epochs, model_version, model_SR, model_RS, opt_SR, opt_RS, lambda_cycle = lambda_cycle, lambda_identity = lambda_identity,
                   device= 'cuda' if torch.cuda.is_available() else 'cpu',
-                  lr = 2e-4, load = False):
+                  lr = lr, load = False):
 
     try:
         model_SR, opt_SR = load_GAN(MODEL_NAME = "SR_" + model_version, model = model_SR,optimizer = opt_SR)
@@ -169,7 +181,7 @@ if __name__ == "__main__":
         ]
     )
 
-    root_path = path_img
+
     train_dataset = SimRealDataset(root_path, transform=transforms)
     train_loader = DataLoader(train_dataset, batch_size=1, shuffle=True)
 
@@ -183,8 +195,6 @@ if __name__ == "__main__":
         "generator": Generator().to(device)
     }
 
-    lr = 0.0002
-
     gen_SR = model_SR['generator']
     gen_RS = model_RS['generator']
     discr_S = model_RS['discriminator']
@@ -193,21 +203,21 @@ if __name__ == "__main__":
     opt_SR = {
         "discriminator": torch.optim.Adam(params=discr_R.parameters(),
                                           lr=lr,
-                                          betas=(0.5, 0.99)),
+                                          betas=betas ),
         "generator": torch.optim.Adam(
             params=gen_SR.parameters(),
             lr=lr,
-            betas=(0.5, 0.99))
+            betas=betas )
     }
 
     opt_RS = {
         "discriminator": torch.optim.Adam(params=discr_S.parameters(),
                                           lr=lr,
-                                          betas=(0.5, 0.99)),
+                                          betas=betas ),
         "generator": torch.optim.Adam(
             params=gen_RS.parameters(),
             lr=lr,
-            betas=(0.5, 0.99))
+            betas=betas )
     }
 
     criterias = {
@@ -218,7 +228,7 @@ if __name__ == "__main__":
 
 
     loss_D_Sim_per_epochs, loss_D_Real_per_epochs, loss_G_Sim_per_epochs, loss_G_Real_per_epochs = \
-        trainCycleGAN(n_epochs=50, model_version="1", model_SR=model_SR, model_RS=model_RS, opt_SR=opt_SR,
+        trainCycleGAN(n_epochs=n_epochs, model_version=model_version, model_SR=model_SR, model_RS=model_RS, opt_SR=opt_SR,
                       opt_RS=opt_RS)
 
     plt.plot(loss_D_Sim_per_epochs, label="loss Discr (Sim)")
