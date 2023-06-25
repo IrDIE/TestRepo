@@ -19,12 +19,13 @@ class ConvBlock(nn.Module):
 
 
 class ResBlock(nn.Module):
-    def __init__(self, channels):
+    def __init__(self, channels, i):
         super().__init__()
 
         self.resBlock = nn.Sequential(
 
             ConvBlock(channels, channels, kernel_size=3, stride=1, padding=1),
+            nn.Dropout(0.5) if (i == 2 or i == 5) else nn.Identity(),
             ConvBlock(channels, channels, identity=True, kernel_size=3, stride=1, padding=1)
 
         )
@@ -49,7 +50,7 @@ class Generator(nn.Module):
         ])
 
         self.residuals_blocks = nn.Sequential(
-            *[ResBlock(channels * 4) for _ in range(num_residuals)]
+            *[ResBlock(channels * 4) for i in range(num_residuals)]
         )
 
         self.up_conv = nn.ModuleList(
