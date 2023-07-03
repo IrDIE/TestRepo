@@ -9,8 +9,10 @@ def display_losses(loss_D_Sim_per_epochs, loss_D_Real_per_epochs, loss_G_Sim_per
       fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(16, 8))
       axes[0].plot(loss_D_Sim_per_epochs, label="loss Discr (Sim)")
       axes[0].plot(loss_D_Real_per_epochs, label="loss Discr (Real)")
+      plt.legend()
       axes[1].plot(loss_G_Sim_per_epochs, label="loss Generator (Sim)")
       axes[1].plot(loss_G_Real_per_epochs, label="loss Generator (Real)")
+      plt.legend()
       plt.show()
 
 
