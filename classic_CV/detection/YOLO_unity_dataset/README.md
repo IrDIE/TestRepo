@@ -29,12 +29,20 @@ Unity provide useful way to converd dataset to COCO format - https://github.com/
 
 From COCO dataset was converted to darknet format ( for YOLO )
 
+One of validation results:
+
+
+
 | Unity bounding boxes                                  | YOLO predicted  boxes         |
 | -------------------------------------------------------- | ---------------------- |
 |![alt text](https://github.com/IrDIE/TestRepo/blob/main/classic_CV/detection/YOLO_unity_dataset/images/val_batch0_labels.jpg) |![alt text](https://github.com/IrDIE/TestRepo/blob/main/classic_CV/detection/YOLO_unity_dataset/images/val_batch0_pred.jpg) |
 
 
+---------------------------------
 
-One of validation results:
+One of test results:
+
+
+![alt text](https://github.com/IrDIE/TestRepo/blob/main/classic_CV/detection/YOLO_unity_dataset/images/inference.jpg) 
 
 
