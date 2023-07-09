@@ -3,7 +3,9 @@ Use pre-trained YOLO-5 model and fine-tune it, to detect and classify interior i
 
 Example of pictures from Unity:
 
-https://github.com/IrDIE/TestRepo/blob/main/classic_CV/detection/YOLO_unity_dataset/step225.camera.png
+![alt text](https://github.com/IrDIE/TestRepo/blob/main/classic_CV/detection/YOLO_unity_dataset/step225.camera.png)
+
+![alt text](https://github.com/IrDIE/TestRepo/blob/main/classic_CV/detection/YOLO_unity_dataset/step273.camera.png)
 
 
 
