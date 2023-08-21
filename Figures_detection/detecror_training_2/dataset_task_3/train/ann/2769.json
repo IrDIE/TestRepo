@@ -1,0 +1,30 @@
+[
+    {
+        "id": "0",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "192",
+                "y": "81"
+            },
+            "size": {
+                "width": "36",
+                "height": "42"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "rhombus",
+        "region": {
+            "origin": {
+                "x": "61",
+                "y": "58"
+            },
+            "size": {
+                "width": "27",
+                "height": "27"
+            }
+        }
+    }
+]

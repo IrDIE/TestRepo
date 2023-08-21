@@ -1,0 +1,2 @@
+,MODEL_VERSION,epoch,mean_iou,max_iou,min_iou,precision,recall,mAP.0.5
+0,v_start_learn.pth.tar,3,1.462679034495591e-10,7.752198882826633e-09,0.0,0.0,0.0,tensor(0.)

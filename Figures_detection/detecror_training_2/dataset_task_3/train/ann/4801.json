@@ -1,0 +1,16 @@
+[
+    {
+        "id": "0",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "147",
+                "y": "165"
+            },
+            "size": {
+                "width": "37",
+                "height": "41"
+            }
+        }
+    }
+]
