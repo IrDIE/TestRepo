@@ -43,6 +43,9 @@ def intersection_over_union(boxes_preds, boxes_labels, box_format="midpoint"):
 
 def non_max_suppression(bboxes, iou_threshold, threshold, box_format="corners"):
     assert type(bboxes) == list
+    # for box in bboxes:
+    #   print(box[1] , " = threshold")
+
 
     bboxes = [box for box in bboxes if box[1] > threshold]
     bboxes = sorted(bboxes, key=lambda x: x[1], reverse=True)
@@ -50,6 +53,12 @@ def non_max_suppression(bboxes, iou_threshold, threshold, box_format="corners"):
 
     while bboxes:
         chosen_box = bboxes.pop(0)
+      #   iou = intersection_over_union(
+      #     torch.tensor(chosen_box[2:]),
+      #     torch.tensor(box[2:]),
+      #     box_format=box_format,
+      # )
+      #   print(iou, " = iou")
 
         bboxes = [
             box
@@ -233,9 +242,9 @@ def cellboxes_to_boxes(out, S=4):
 def get_bboxes(
     loader, model, iou_threshold, threshold, pred_format="cells",  box_format="midpoint", \
         device="cuda" if torch.cuda.is_available() else "cpu", save_image_detected_res = None, \
-        epoch = '', inference_time = 1
+        epoch = '', inference_time = 1, img_label = ''
 ):
-
+    
     all_pred_boxes = []
     all_true_boxes = []
 
@@ -254,7 +263,7 @@ def get_bboxes(
         true_bboxes = cellboxes_to_boxes(labels)
         bboxes = cellboxes_to_boxes(predictions)
         
-
+        # для картинки в батче
         for idx in range(batch_size):
             nms_boxes = non_max_suppression(
                 bboxes[idx],
@@ -278,9 +287,10 @@ def get_bboxes(
             #     save=save_image_detected_res, idx = inference_time, epoch = str(epoch))
             #     save_image_detected_res = None
 
-            if batch_idx == 0 and idx == 0 and (save_image_detected_res is not None) and (inference_time % 3 == 0):
-                plot_image(x[idx].permute(1,2,0).to("cpu"),\
-                 nms_boxes, save=save_image_detected_res, idx = inference_time, epoch = str(epoch))
+            
+            if batch_idx % 13 == 0 and idx == 0 and (save_image_detected_res is not None) :
+                plot_image(x[idx].permute(1,2,0).to("cpu"),nms_boxes, save=save_image_detected_res,\
+                 idx = inference_time, epoch = str(epoch), img_label = img_label + '_' +  str(batch_idx))
                 save_image_detected_res = None
         
             
@@ -303,7 +313,7 @@ def get_box(image, boxes):
 
 
 
-def plot_image(image, boxes, idx, save = None, epoch = ''):
+def plot_image(image, boxes, idx, save = None, epoch = '', img_label = ''):
     """Plots predicted bounding boxes on the image"""
     im = np.array(image)
     height, width, _ = im.shape
@@ -335,7 +345,7 @@ def plot_image(image, boxes, idx, save = None, epoch = ''):
         ax.add_patch(rect)
 
     if save is not None:
-        plt.savefig(save + f'/test_res_epoch_{epoch}_{idx}_.png')
+        plt.savefig(save + f'/{img_label}__.png')
     #plt.show()
 
 

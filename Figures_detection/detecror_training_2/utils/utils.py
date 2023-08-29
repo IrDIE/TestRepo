@@ -11,11 +11,12 @@ def convert(size, box):
     y = (box[2] + box[3])/2.0
     w = box[1] - box[0]
     h = box[3] - box[2]
+
     x = x*dw
     w = w*dw
     y = y*dh
     h = h*dh
-    return (x,y,w,h)
+    return (x,y,w,h) # return relative midpoint (x, y) and rel w and h (relative to img size )
 
 def parse_json_to_yolo(path:str, path_save_txt : str):
 

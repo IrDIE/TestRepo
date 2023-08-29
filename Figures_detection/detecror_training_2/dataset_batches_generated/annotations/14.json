@@ -4,12 +4,12 @@
         "name": "triangle",
         "region": {
             "origin": {
-                "x": "86",
-                "y": "203"
+                "x": "179",
+                "y": "45"
             },
             "size": {
-                "width": "34",
-                "height": "26"
+                "width": "33",
+                "height": "28"
             }
         }
     }

@@ -1,29 +1,57 @@
 [
     {
         "id": "0",
-        "name": "hexagon",
+        "name": "rhombus",
         "region": {
             "origin": {
-                "x": "58",
-                "y": "161"
+                "x": "160",
+                "y": "153"
             },
             "size": {
-                "width": "38",
-                "height": "38"
+                "width": "34",
+                "height": "34"
             }
         }
     },
     {
         "id": "1",
+        "name": "circle",
+        "region": {
+            "origin": {
+                "x": "50",
+                "y": "63"
+            },
+            "size": {
+                "width": "42",
+                "height": "42"
+            }
+        }
+    },
+    {
+        "id": "2",
         "name": "rhombus",
         "region": {
             "origin": {
-                "x": "70",
-                "y": "72"
+                "x": "-15",
+                "y": "122"
             },
             "size": {
-                "width": "37",
-                "height": "37"
+                "width": "31",
+                "height": "32"
+            }
+        }
+    },
+    {
+        "id": "3",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "241",
+                "y": "89"
+            },
+            "size": {
+                "width": "29",
+                "height": "36"
             }
         }
     }

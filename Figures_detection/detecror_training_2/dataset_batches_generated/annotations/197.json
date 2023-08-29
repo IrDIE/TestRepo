@@ -1,0 +1,72 @@
+[
+    {
+        "id": "0",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "61",
+                "y": "40"
+            },
+            "size": {
+                "width": "30",
+                "height": "43"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "144",
+                "y": "166"
+            },
+            "size": {
+                "width": "29",
+                "height": "36"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "16",
+                "y": "164"
+            },
+            "size": {
+                "width": "37",
+                "height": "41"
+            }
+        }
+    },
+    {
+        "id": "3",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "192",
+                "y": "89"
+            },
+            "size": {
+                "width": "27",
+                "height": "33"
+            }
+        }
+    },
+    {
+        "id": "4",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "124",
+                "y": "102"
+            },
+            "size": {
+                "width": "30",
+                "height": "35"
+            }
+        }
+    }
+]

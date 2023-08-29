@@ -4,8 +4,50 @@
         "name": "circle",
         "region": {
             "origin": {
-                "x": "176",
-                "y": "24"
+                "x": "53",
+                "y": "59"
+            },
+            "size": {
+                "width": "42",
+                "height": "42"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "circle",
+        "region": {
+            "origin": {
+                "x": "157",
+                "y": "149"
+            },
+            "size": {
+                "width": "42",
+                "height": "42"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "187",
+                "y": "66"
+            },
+            "size": {
+                "width": "32",
+                "height": "43"
+            }
+        }
+    },
+    {
+        "id": "3",
+        "name": "rhombus",
+        "region": {
+            "origin": {
+                "x": "17",
+                "y": "124"
             },
             "size": {
                 "width": "34",
@@ -14,44 +56,16 @@
         }
     },
     {
-        "id": "1",
-        "name": "triangle",
+        "id": "4",
+        "name": "circle",
         "region": {
             "origin": {
-                "x": "89",
-                "y": "49"
+                "x": "90",
+                "y": "113"
             },
             "size": {
-                "width": "28",
-                "height": "57"
-            }
-        }
-    },
-    {
-        "id": "2",
-        "name": "hexagon",
-        "region": {
-            "origin": {
-                "x": "3",
-                "y": "125"
-            },
-            "size": {
-                "width": "35",
+                "width": "42",
                 "height": "42"
-            }
-        }
-    },
-    {
-        "id": "3",
-        "name": "triangle",
-        "region": {
-            "origin": {
-                "x": "184",
-                "y": "182"
-            },
-            "size": {
-                "width": "33",
-                "height": "43"
             }
         }
     }

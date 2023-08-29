@@ -1,0 +1,44 @@
+[
+    {
+        "id": "0",
+        "name": "rhombus",
+        "region": {
+            "origin": {
+                "x": "61",
+                "y": "47"
+            },
+            "size": {
+                "width": "27",
+                "height": "27"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "171",
+                "y": "86"
+            },
+            "size": {
+                "width": "30",
+                "height": "29"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "rhombus",
+        "region": {
+            "origin": {
+                "x": "44",
+                "y": "158"
+            },
+            "size": {
+                "width": "31",
+                "height": "31"
+            }
+        }
+    }
+]

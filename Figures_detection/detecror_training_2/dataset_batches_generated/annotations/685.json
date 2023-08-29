@@ -1,0 +1,16 @@
+[
+    {
+        "id": "0",
+        "name": "rhombus",
+        "region": {
+            "origin": {
+                "x": "189",
+                "y": "86"
+            },
+            "size": {
+                "width": "25",
+                "height": "25"
+            }
+        }
+    }
+]

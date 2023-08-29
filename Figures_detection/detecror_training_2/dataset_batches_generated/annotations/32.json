@@ -1,29 +1,15 @@
 [
     {
         "id": "0",
-        "name": "hexagon",
+        "name": "rhombus",
         "region": {
             "origin": {
-                "x": "175",
-                "y": "178"
+                "x": "164",
+                "y": "170"
             },
             "size": {
-                "width": "30",
-                "height": "32"
-            }
-        }
-    },
-    {
-        "id": "1",
-        "name": "circle",
-        "region": {
-            "origin": {
-                "x": "159",
-                "y": "24"
-            },
-            "size": {
-                "width": "34",
-                "height": "34"
+                "width": "21",
+                "height": "21"
             }
         }
     }

@@ -4,68 +4,68 @@
         "name": "triangle",
         "region": {
             "origin": {
-                "x": "183",
-                "y": "91"
+                "x": "80",
+                "y": "145"
             },
             "size": {
-                "width": "32",
-                "height": "25"
+                "width": "30",
+                "height": "41"
             }
         }
     },
     {
         "id": "1",
-        "name": "hexagon",
+        "name": "circle",
         "region": {
             "origin": {
-                "x": "75",
-                "y": "70"
+                "x": "44",
+                "y": "22"
             },
             "size": {
-                "width": "32",
-                "height": "38"
+                "width": "42",
+                "height": "42"
             }
         }
     },
     {
         "id": "2",
-        "name": "triangle",
+        "name": "circle",
         "region": {
             "origin": {
-                "x": "71",
-                "y": "210"
+                "x": "157",
+                "y": "188"
             },
             "size": {
-                "width": "30",
-                "height": "25"
+                "width": "42",
+                "height": "42"
             }
         }
     },
     {
         "id": "3",
-        "name": "triangle",
+        "name": "hexagon",
         "region": {
             "origin": {
-                "x": "193",
-                "y": "185"
+                "x": "176",
+                "y": "71"
             },
             "size": {
-                "width": "31",
-                "height": "49"
+                "width": "29",
+                "height": "32"
             }
         }
     },
     {
         "id": "4",
-        "name": "hexagon",
+        "name": "triangle",
         "region": {
             "origin": {
-                "x": "117",
-                "y": "109"
+                "x": "147",
+                "y": "81"
             },
             "size": {
-                "width": "34",
-                "height": "42"
+                "width": "31",
+                "height": "38"
             }
         }
     }

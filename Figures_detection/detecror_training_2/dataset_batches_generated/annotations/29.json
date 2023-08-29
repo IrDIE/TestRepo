@@ -1,11 +1,11 @@
 [
     {
         "id": "0",
-        "name": "circle",
+        "name": "rhombus",
         "region": {
             "origin": {
-                "x": "68",
-                "y": "156"
+                "x": "134",
+                "y": "168"
             },
             "size": {
                 "width": "34",

@@ -5,6 +5,7 @@ import torch
 from PIL import Image
 from Figures_detection.Dataset_generation_1.Generator  import DataGenerator
 from Figures_detection.detecror_training_2.utils.utils import parse_json_to_yolo
+import time
 
 LABEL_DIR = './dataset_batches_generated'
 IMG_DIR = './dataset_batches_generated/imgs'
@@ -12,7 +13,8 @@ IMG_DIR = './dataset_batches_generated/imgs'
 
 class ShapeDatasetFromGenerator(torch.utils.data.Dataset):
     def __init__(self,total_len_annoattions, img_dir = IMG_DIR, label_dir = LABEL_DIR , \
-                 patch_size = 4, boxes = 2, classes = 4, transform = None, is_hexagon_required = False, hexagon_no_need = False):
+                 patch_size = 4, boxes = 2, classes = 4, transform = None, \
+                 is_hexagon_required = False, hexagon_no_need = False):
         self.img_dir = img_dir
         self.label_dir = label_dir
         self.patch_size = patch_size
@@ -32,8 +34,12 @@ class ShapeDatasetFromGenerator(torch.utils.data.Dataset):
         n_points = random.randint(1, 6)
         self.generator.generate_image_ann(n_points=n_points, path_img=self.img_dir + f'/{index}',\
          path_annot=self.label_dir + '/annotations'+ f'/{index}', is_hexagon_required = self.is_hexagon_required,  hexagon_no_need = self.hexagon_no_need)
+        
+        #time.sleep(2)
+        
         parse_json_to_yolo(path=self.label_dir + '/annotations', path_save_txt= self.label_dir + '/annotations_txt')
 
+        #time.sleep(2)
         label_path = self.label_dir + '/annotations_txt' + f'/{index}.txt'
         boxes = []
         with open(label_path) as f:
@@ -41,6 +47,7 @@ class ShapeDatasetFromGenerator(torch.utils.data.Dataset):
                 class_label, x, y, width, height = [
                     float(x) for x in label.replace("\n", "").split()
                 ]
+                class_label = int(class_label)
                 if x > 0.99:
                   x = 0.99
                 if y > 0.99:

@@ -11,8 +11,8 @@ class lossYolov1(nn.Module):
         self.classes = classes
         self.boxes = boxes
 
-        self.lambda_noobj = 0.5
-        self.lambda_coord = 5
+        self.lambda_noobj = 0.7 # 0.5 in paper
+        self.lambda_coord = 8 # 5 in paper
 
     def forward(self, predictions, target):
 
@@ -73,7 +73,7 @@ class lossYolov1(nn.Module):
         )
 
         loss = (
-            self.lambda_coord * box_loss + object_loss + self.lambda_noobj * no_obj_loss + class_loss
+            self.lambda_coord * box_loss + object_loss + self.lambda_noobj * no_obj_loss + class_loss * 0.8
         )
 
         return loss

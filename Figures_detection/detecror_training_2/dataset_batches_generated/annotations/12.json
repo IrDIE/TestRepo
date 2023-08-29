@@ -1,29 +1,43 @@
 [
     {
         "id": "0",
-        "name": "triangle",
+        "name": "circle",
         "region": {
             "origin": {
-                "x": "184",
-                "y": "159"
+                "x": "166",
+                "y": "70"
             },
             "size": {
-                "width": "34",
+                "width": "42",
                 "height": "42"
             }
         }
     },
     {
         "id": "1",
-        "name": "hexagon",
+        "name": "rhombus",
         "region": {
             "origin": {
-                "x": "64",
-                "y": "162"
+                "x": "140",
+                "y": "156"
             },
             "size": {
-                "width": "30",
-                "height": "30"
+                "width": "36",
+                "height": "36"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "87",
+                "y": "209"
+            },
+            "size": {
+                "width": "31",
+                "height": "28"
             }
         }
     }

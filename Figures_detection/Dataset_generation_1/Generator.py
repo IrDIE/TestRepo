@@ -26,9 +26,8 @@ class DataGenerator():
         return base_img
 
 
-    def generate_image_ann(self, is_hexagon_required = False, n_points : int = 2, \
-                           hexagon_no_need : bool = False,\
-                            path_img : str = './task1_generated_dataset', path_annot : str =  './task1_generated_dataset'):
+    def generate_image_ann(self, is_hexagon_required = False, n_points : int = 2, hexagon_no_need : bool = False,\
+                  path_img : str = './task1_generated_dataset', path_annot : str =  './task1_generated_dataset'):
         # save to self.path_save
         img = self.create_base_img()
         img, points_list = self.generate_points(n_points=n_points, img = img)
@@ -38,7 +37,7 @@ class DataGenerator():
                 # draw it
                 img , meta_info = self.generate_hexagon(img, points_list[i])
                 [x_max, y_max, x_min, y_min] = meta_info
-                img = cv2.rectangle(img, (x_min, y_min), (x_max, y_max), (0, 0, 0), 1)
+                # img = cv2.rectangle(img, (x_min, y_min), (x_max, y_max), (0, 0, 0), 1)
                 is_hexagon_required = False
                 annotated_json.append(convert(x_max, y_max, x_min, y_min, id = i, shape_name = -1))
                 continue
@@ -55,7 +54,7 @@ class DataGenerator():
             img, meta_info = generators[shape](img,  points_list[i])
             [x_max, y_max, x_min, y_min] = meta_info
             annotated_json.append(convert(x_max, y_max, x_min, y_min, id=i, shape_name=shape))
-            img = cv2.rectangle(img, (x_min, y_min), (x_max, y_max), (0, 0, 0), 1)
+            #img = cv2.rectangle(img, (x_min, y_min), (x_max, y_max), (0, 0, 0), 1)
 
         with open(path_annot + '.json', 'w') as outfile:
             json.dump(annotated_json, outfile, indent=4)
@@ -129,8 +128,8 @@ class DataGenerator():
                 points_list.append([x, y])
 
 
-        for point in points_list:
-            img = cv2.circle(img, (point[0], point[1]), radius=0, color=(0, 0, 255), thickness=0)
+        # for point in points_list:
+        #     img = cv2.circle(img, (point[0], point[1]), radius=0, color=(0, 0, 255), thickness=0)
         return img, points_list
 
     def rotate(self, points, angle):

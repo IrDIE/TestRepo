@@ -1,29 +1,57 @@
 [
     {
         "id": "0",
-        "name": "hexagon",
+        "name": "triangle",
         "region": {
             "origin": {
-                "x": "219",
-                "y": "70"
+                "x": "68",
+                "y": "146"
             },
             "size": {
-                "width": "31",
-                "height": "35"
+                "width": "29",
+                "height": "52"
             }
         }
     },
     {
         "id": "1",
-        "name": "triangle",
+        "name": "hexagon",
         "region": {
             "origin": {
-                "x": "181",
-                "y": "179"
+                "x": "178",
+                "y": "87"
             },
             "size": {
-                "width": "28",
-                "height": "40"
+                "width": "29",
+                "height": "32"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "172",
+                "y": "176"
+            },
+            "size": {
+                "width": "33",
+                "height": "42"
+            }
+        }
+    },
+    {
+        "id": "3",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "71",
+                "y": "31"
+            },
+            "size": {
+                "width": "37",
+                "height": "41"
             }
         }
     }

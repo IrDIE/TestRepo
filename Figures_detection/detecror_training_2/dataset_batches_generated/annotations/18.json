@@ -1,15 +1,15 @@
 [
     {
         "id": "0",
-        "name": "circle",
+        "name": "rhombus",
         "region": {
             "origin": {
-                "x": "151",
-                "y": "191"
+                "x": "35",
+                "y": "142"
             },
             "size": {
-                "width": "34",
-                "height": "34"
+                "width": "32",
+                "height": "32"
             }
         }
     },
@@ -18,40 +18,12 @@
         "name": "rhombus",
         "region": {
             "origin": {
-                "x": "75",
-                "y": "53"
+                "x": "214",
+                "y": "88"
             },
             "size": {
-                "width": "31",
-                "height": "31"
-            }
-        }
-    },
-    {
-        "id": "2",
-        "name": "circle",
-        "region": {
-            "origin": {
-                "x": "42",
-                "y": "166"
-            },
-            "size": {
-                "width": "34",
-                "height": "34"
-            }
-        }
-    },
-    {
-        "id": "3",
-        "name": "rhombus",
-        "region": {
-            "origin": {
-                "x": "171",
-                "y": "59"
-            },
-            "size": {
-                "width": "32",
-                "height": "32"
+                "width": "29",
+                "height": "29"
             }
         }
     }

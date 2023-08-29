@@ -1,29 +1,29 @@
 [
     {
         "id": "0",
-        "name": "hexagon",
+        "name": "triangle",
         "region": {
             "origin": {
-                "x": "-2",
-                "y": "119"
+                "x": "78",
+                "y": "34"
             },
             "size": {
-                "width": "30",
-                "height": "38"
+                "width": "28",
+                "height": "56"
             }
         }
     },
     {
         "id": "1",
-        "name": "hexagon",
+        "name": "triangle",
         "region": {
             "origin": {
-                "x": "183",
-                "y": "68"
+                "x": "182",
+                "y": "172"
             },
             "size": {
-                "width": "30",
-                "height": "36"
+                "width": "34",
+                "height": "26"
             }
         }
     },
@@ -32,26 +32,26 @@
         "name": "circle",
         "region": {
             "origin": {
-                "x": "45",
-                "y": "67"
+                "x": "47",
+                "y": "167"
             },
             "size": {
-                "width": "34",
-                "height": "34"
+                "width": "42",
+                "height": "42"
             }
         }
     },
     {
         "id": "3",
-        "name": "circle",
+        "name": "triangle",
         "region": {
             "origin": {
-                "x": "174",
-                "y": "188"
+                "x": "169",
+                "y": "71"
             },
             "size": {
-                "width": "34",
-                "height": "34"
+                "width": "30",
+                "height": "25"
             }
         }
     },
@@ -60,12 +60,12 @@
         "name": "triangle",
         "region": {
             "origin": {
-                "x": "140",
-                "y": "130"
+                "x": "136",
+                "y": "85"
             },
             "size": {
                 "width": "34",
-                "height": "29"
+                "height": "40"
             }
         }
     }

@@ -4,26 +4,26 @@
         "name": "rhombus",
         "region": {
             "origin": {
-                "x": "180",
-                "y": "168"
+                "x": "48",
+                "y": "54"
             },
             "size": {
-                "width": "37",
-                "height": "37"
+                "width": "32",
+                "height": "32"
             }
         }
     },
     {
         "id": "1",
-        "name": "circle",
+        "name": "triangle",
         "region": {
             "origin": {
-                "x": "65",
-                "y": "72"
+                "x": "164",
+                "y": "136"
             },
             "size": {
                 "width": "34",
-                "height": "34"
+                "height": "56"
             }
         }
     },
@@ -32,26 +32,26 @@
         "name": "hexagon",
         "region": {
             "origin": {
-                "x": "164",
-                "y": "46"
+                "x": "39",
+                "y": "141"
             },
             "size": {
-                "width": "34",
-                "height": "35"
+                "width": "32",
+                "height": "37"
             }
         }
     },
     {
         "id": "3",
-        "name": "circle",
+        "name": "rhombus",
         "region": {
             "origin": {
-                "x": "48",
-                "y": "155"
+                "x": "229",
+                "y": "75"
             },
             "size": {
-                "width": "34",
-                "height": "34"
+                "width": "36",
+                "height": "36"
             }
         }
     },
@@ -60,12 +60,12 @@
         "name": "circle",
         "region": {
             "origin": {
-                "x": "100",
-                "y": "126"
+                "x": "115",
+                "y": "105"
             },
             "size": {
-                "width": "34",
-                "height": "34"
+                "width": "42",
+                "height": "42"
             }
         }
     }

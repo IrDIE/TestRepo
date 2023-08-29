@@ -1,29 +1,15 @@
 [
     {
         "id": "0",
-        "name": "triangle",
+        "name": "hexagon",
         "region": {
             "origin": {
-                "x": "59",
-                "y": "148"
+                "x": "185",
+                "y": "43"
             },
             "size": {
-                "width": "30",
-                "height": "55"
-            }
-        }
-    },
-    {
-        "id": "1",
-        "name": "circle",
-        "region": {
-            "origin": {
-                "x": "151",
-                "y": "67"
-            },
-            "size": {
-                "width": "34",
-                "height": "34"
+                "width": "38",
+                "height": "39"
             }
         }
     }

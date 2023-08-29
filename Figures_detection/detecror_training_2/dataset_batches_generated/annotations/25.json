@@ -4,12 +4,12 @@
         "name": "rhombus",
         "region": {
             "origin": {
-                "x": "63",
-                "y": "171"
+                "x": "67",
+                "y": "73"
             },
             "size": {
-                "width": "27",
-                "height": "27"
+                "width": "21",
+                "height": "21"
             }
         }
     },
@@ -18,40 +18,40 @@
         "name": "circle",
         "region": {
             "origin": {
-                "x": "165",
-                "y": "54"
+                "x": "48",
+                "y": "181"
             },
             "size": {
-                "width": "34",
-                "height": "34"
+                "width": "42",
+                "height": "42"
             }
         }
     },
     {
         "id": "2",
-        "name": "triangle",
+        "name": "circle",
         "region": {
             "origin": {
-                "x": "60",
-                "y": "73"
+                "x": "151",
+                "y": "166"
             },
             "size": {
-                "width": "33",
-                "height": "27"
+                "width": "42",
+                "height": "42"
             }
         }
     },
     {
         "id": "3",
-        "name": "hexagon",
+        "name": "triangle",
         "region": {
             "origin": {
-                "x": "148",
-                "y": "150"
+                "x": "176",
+                "y": "61"
             },
             "size": {
-                "width": "35",
-                "height": "42"
+                "width": "31",
+                "height": "39"
             }
         }
     }
